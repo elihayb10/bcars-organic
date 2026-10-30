@@ -1,0 +1,60 @@
+{
+ "date": "2026-10-30",
+ "at": "2026-10-30T14:33:57.834Z",
+ "skipped": [
+  "מזדה 3 2010 (2996071): פחות מ-10 תמונות",
+  "אופל אסטרה BERLINA 2016 (3079739): יד 5",
+  "סקודה ראפיד 2018 (37341201): יד 3",
+  "יונדאי טוסון 2016 (6751539): יד 5"
+ ],
+ "auto360": "ok",
+ "next": "שברולט ספארק 2021",
+ "car": {
+  "title": "סיאט איביזה 2018",
+  "trim": "FR",
+  "plate": "37397901",
+  "km": 173500,
+  "hand": "01",
+  "origin": "פרטית",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 1000,
+  "hp": 115,
+  "seats": 5,
+  "test": "20/02/2027",
+  "price": 59000,
+  "noPhotos": false,
+  "wpId": 23978,
+  "link": "https://www.bcars.co.il/car/%d7%a1%d7%99%d7%90%d7%98-%d7%90%d7%99%d7%91%d7%99%d7%96%d7%94-2018-5327/",
+  "syncId": 5327,
+  "commercial": false,
+  "dateMs": 1793081337000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/10-26/Zf8RPx1t3j.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/Nukk9FUEAO.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/GxrVczjJlz.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/c6AwWHWcIt.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/MrqaD4xrkd.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/yF0O2Mx5r1.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/AVjf6eT8bL.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/gSRDh68aqd.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/YO2arfyufe.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/IoduTThN8I.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/10-26/IXHQQOeykE.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/drKacU4Jgx.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/TzrX8CgEAe.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/NZlxJKL5pJ.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/UzDYVO7FzM.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1793081337000,
+  "ageDays": 3,
+  "below": true,
+  "body": "HATCHBACK",
+  "oldStar": ""
+ }
+}
