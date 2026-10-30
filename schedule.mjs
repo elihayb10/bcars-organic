@@ -68,7 +68,7 @@ else if (cmd === 'alive') {
   } catch (e) { console.log('UNKNOWN ' + e.message); }
 }
 else if (cmd === 'posts') {
-  if (plan.date !== now.date) { console.log(`STALE: התוכנית מ-${plan.date}, היום ${now.date}`); process.exit(1); }
+  if (plan.date !== now.date && !process.env.NOW) { console.log(`STALE: התוכנית מ-${plan.date}, היום ${now.date}`); process.exit(1); }
   if (!plan.car || !plan.car.video) { console.log('NOCAR'); process.exit(1); }
   const out = [], have = new Set(ours(read(process.argv[3] || 'scheduled.json')).map(netOf));
   for (const net of NETS) {
