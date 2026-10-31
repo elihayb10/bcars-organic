@@ -30,6 +30,13 @@ if (step === 'prepare') {
     console.log('::error::אין סגנון חודשי');
     process.exit(1);
   }
+  // רכב אחד ביום: אם כבר תוזמן היום פוסט רכב (שורה "תוכנן" ביומן עם התאריך של היום), לא בונים עוד אחד
+  const already = fs.readFileSync(LOG, 'utf8').split(/\r?\n/).map((l) => l.split(',')).find((r) => r[0] === today && (r[5] || '').trim() === 'תוכנן');
+  if (already) {
+    fs.writeFileSync('today.json', JSON.stringify({ date: today, error: `כבר תוזמן היום פוסט רכב (${already[3]}), לא נבנה עוד אחד` }, null, 1));
+    commit(`today: ${today} (כבר תוזמן)`, ['today.json']);
+    process.exit(0);
+  }
   run('node', ['car_text.cjs', 'collect']);
   run('node', ['car_text.cjs', 'prepare']);
   commit(`today: ${today}`, ['today.json']);
