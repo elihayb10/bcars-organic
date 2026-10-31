@@ -63,7 +63,7 @@
 2. מחכים ש-date יהיה היום, ושיופיע car.video או error.
 3. יש error, או שלא הגיע בזמן: PushNotification "פוסט הרכב היומי: הסרטון לא נבנה: " ואחריו השגיאה, ועצור.
 4. `git pull -q`.
-5. `curl -sIL -o /dev/null -w '%{http_code}' "<car.video>"` צריך להחזיר 200.
+5. `curl -sL -r 0-1023 -o /dev/null -w '%{http_code}' "<car.video>"` צריך להחזיר 206 או 200 (בקשת HEAD מחזירה 401 בגיטהאב, ולכן לא משתמשים בה).
 6. `node schedule.mjs alive`:
    - SOLD: PushNotification "פוסט הרכב היומי: <car.name> נמכר הבוקר, לא תוזמן", ועצור.
    - ALIVE או UNKNOWN: ממשיכים.

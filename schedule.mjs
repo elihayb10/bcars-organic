@@ -46,7 +46,8 @@ function info(net, dateTime) {
   const data = {
     instagram: { instagramData: { type: 'REEL', showReelOnFeed: true } },
     facebook: { facebookData: { type: 'REEL', title: c.title } },
-    tiktok: { tiktokData: { privacyOption: 'PUBLIC_TO_EVERYONE', disableComment: false, disableDuet: false, disableStitch: false } },
+    // Metricool דורש כותרת בטיקטוק (נבדק 31.10)
+    tiktok: { tiktokData: { title: c.title, privacyOption: 'PUBLIC_TO_EVERYONE', disableComment: false, disableDuet: false, disableStitch: false } },
     youtube: { youtubeData: { title: c.title, type: 'short', privacy: 'public', madeForKids: false, category: 'AUTOS_VEHICLES' } },
   }[net];
   return { autoPublish: true, draft: plan.mode !== 'live', descendants: [], firstCommentText: '', hasNotReadNotes: false,

@@ -4,3 +4,10 @@ out/
 jobs/
 cars.json
 .env
+ph/
+bt-*.json
+info-*.json
+date-*.txt
+upd-*.json
+results.json
+scheduled.json
