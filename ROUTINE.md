@@ -71,12 +71,14 @@
 ## 4. תזמון ב-Metricool
 1. getScheduledPosts עם brandId 4413696, fromDate `<היום>T00:00:00<היסט>`, toDate `<היום>T23:59:59<היסט>`, timezone Asia/Jerusalem. שמור את התוצאה כמו שהיא ל-scheduled.json.
 2. לכל רשת מ-instagram, facebook, tiktok ו-youtube: getBestTimeToPostByNetwork עם brandId 4413696, אותם fromDate ו-toDate, timezone Asia/Jerusalem ו-socialNetwork של הרשת. שמור את התוצאה כמו שהיא ל-`bt-<רשת>.json`. אם הקריאה נכשלה, אל תיצור את הקובץ, והסקריפט ישתמש בשעת ברירת מחדל.
-3. `node schedule.mjs posts scheduled.json` כותב `info-<רשת>.json` ו-`date-<רשת>.txt` לכל רשת שצריך לתזמן.
-4. לכל רשת שיש לה קובץ info: createScheduledPost עם:
+3. `node schedule.mjs posts scheduled.json` כותב `info-<פוסט>.json` ו-`date-<פוסט>.txt` לכל פוסט שצריך לתזמן.
+   - יש עד שישה פוסטים: instagram, facebook, instagram-story, facebook-story, tiktok ו-youtube.
+   - אינסטגרם ופייסבוק, הריל והסטורי, באותה שעה.
+4. לכל קובץ `info-<פוסט>.json` שנוצר: createScheduledPost עם:
    - blogId = "4413696".
-   - date = התוכן של `date-<רשת>.txt`.
-   - info = התוכן של `info-<רשת>.json`, תו בתו.
-5. אחרי כל קריאה, עדכן את results.json בצורה `{"instagram":"ok", ...}`. בשגיאה כותבים את ההודעה עצמה במקום "ok". לא מנסים שוב קריאה שנכשלה.
+   - date = התוכן של `date-<פוסט>.txt`.
+   - info = התוכן של `info-<פוסט>.json`, תו בתו.
+5. אחרי כל קריאה, עדכן את results.json בצורה `{"instagram":"ok","instagram-story":"ok", ...}`. המפתח הוא שם הפוסט מהקובץ. בשגיאה כותבים את ההודעה עצמה במקום "ok". לא מנסים שוב קריאה שנכשלה.
 6. `node schedule.mjs report`, ואז PushNotification עם הטקסט שהוא הדפיס, בדיוק. סיום.
 
 ## 5. בדיקת צהריים (MODE=CHECK)
