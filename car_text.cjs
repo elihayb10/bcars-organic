@@ -538,9 +538,8 @@ function postText(c, month, line) {
   const hp = c.hp >= 100 ? `, ${c.hp} כ"ס` : '';
   const manual = /ידני/.test(c.gear), gear = manual || (/אוטומט/.test(c.gear) && BOTH_GEARS.test(c.title)) ? (manual ? ', ידני' : ', אוטומטי') : '';
   const engine = ev ? `מנוע חשמלי${hp}` : cc ? `מנוע ${cc} ${c.fuel || ''}`.trim() + hp + gear : '';
-  // במלל הפוסט היד האמיתית ("יד 2" ולא "יד 01" כמו באתר), כדי שקונה יבין (אליחי 31.10). יד 3+ לא מגיעה לכאן (whyNot)
-  const realHand = Number(c.hand) + (String(c.hand).startsWith('0') ? 1 : 0);
-  const hand = c.hand && realHand < 3 ? `יד ${realHand}${c.origin === 'פרטית' ? ' פרטי' : ''}` : '';
+  // היד כמו באתר ("יד 01"), כמו בסרטון (#99). אליחי 31.10 דחה המרה ל"יד 2"
+  const hand = handPart(c).replace(/^ \| /, '');
   const below = belowList(c);
   const lines = [
     `בית הרכב עפולה | ${name} ${year}${uq ? ', ' + uq : ''}`, '',
