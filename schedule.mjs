@@ -8,8 +8,10 @@
 import fs from 'node:fs';
 
 // שישה פוסטים לכל רכב. אינסטגרם ופייסבוק, ריל וסטורי, עולים יחד באותה שעה (אליחי 31.10: "באותה שעה כל הרשתות של
-// אינסטגרם ופייסבוק וסטורי"). טיקטוק ויוטיוב: כל אחד בשעה הכי טובה שלו
+// אינסטגרם ופייסבוק וסטורי"). יוטיוב עולה באותה שעה כמו אינסטגרם ופייסבוק (אליחי 1.11: "אני רוצה גם שיוטיוב תמיד
+// יעלה באותו שעה כמו פייסבוק ואינסטגרם"). טיקטוק: בשעה הכי טובה שלו
 const META = ['instagram', 'facebook'];
+const WITH_META = new Set([...META, 'youtube']); // רשתות שעולות בשעה המשותפת (השעה עצמה מחושבת רק מאינסטגרם ופייסבוק)
 const JOBS = [
   { key: 'instagram', net: 'instagram' }, { key: 'facebook', net: 'facebook' },
   { key: 'instagram-story', net: 'instagram', story: true }, { key: 'facebook-story', net: 'facebook', story: true },
@@ -102,7 +104,7 @@ else if (cmd === 'posts') {
   const out = [];
   for (const job of JOBS) {
     if (have.has(job.key)) { out.push(`${job.key}: כבר תוזמן היום, מדלגים`); continue; }
-    const t = META.includes(job.net) ? metaT : bestHour([job.net]);
+    const t = WITH_META.has(job.net) ? metaT : bestHour([job.net]);
     if (!t) { out.push(`${job.key}: אין שעה פנויה היום`); continue; }
     const dateTime = `${now.date}T${pad(t.h)}:${pad(t.m)}:00`;
     fs.writeFileSync(`info-${job.key}.json`, JSON.stringify(info(job, dateTime)));
