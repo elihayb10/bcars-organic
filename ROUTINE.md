@@ -14,6 +14,8 @@
 
 ב-Metricool: blogId = 4413696, timezone = Asia/Jerusalem.
 
+כל הסיכומים וההודעות בעברית בלבד.
+
 ## 0. התחלה
 1. בתיקיית המאגר bcars-organic: `git checkout -q main && git pull -q`.
 2. `node schedule.mjs mode` מדפיס `<MODE> <תאריך היום> <היסט>`, למשל `SCHEDULE 2026-11-01 +02:00`.
@@ -21,7 +23,7 @@
 
 ## 1. הרכב של היום
 1. `node -e "const t=require('./today.json');console.log(t.date, t.error||'', t.car?t.car.plate+' '+t.car.title:'NOCAR')"`.
-2. התאריך שונה מהיום: חכה. בכל פעם `sleep 300`, אחר כך `git pull -q` ובדוק שוב, עד 45 דקות בסך הכול. עדיין לא: PushNotification "פוסט הרכב היומי: הרכב של היום לא נבחר (GitHub Actions לא רץ)", ועצור.
+2. התאריך שונה מהיום: קודם בדוק ב-GitHub Actions (actions_list, list_workflow_runs, workflow organic.yml) אם יש היום ריצה של prepare (event schedule או workflow_dispatch) שרצה או בתור. אם אין, הפעל אותה בעצמך: actions_run_trigger עם method run_workflow, workflow_id organic.yml, ref main. זו הפעולה היחידה ב-GitHub Actions שמותר לך לעשות. אחר כך חכה. בכל פעם `sleep 300`, אחר כך `git pull -q` ובדוק שוב, עד 45 דקות בסך הכול. עדיין לא: PushNotification "פוסט הרכב היומי: הרכב של היום לא נבחר (גם אחרי הפעלה ידנית של GitHub Actions)", ועצור.
 3. יש error: PushNotification "פוסט הרכב היומי: " ואחריו השגיאה, ועצור.
 4. NOCAR: `node schedule.mjs report`, ואז PushNotification עם הטקסט שהוא הדפיס, בדיוק, ועצור.
 5. אם ב-origin/main כבר יש plan.json מהיום עם car.video (ריצה חוזרת), דלג לסעיף 3. הבדיקה: `git show origin/main:plan.json`.

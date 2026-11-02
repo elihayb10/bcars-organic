@@ -1,9 +1,9 @@
 name: organic
 # הפוסט האורגני היומי של בית הרכב. ראו daily.mjs
-# prepare: א'–ו' ב-03:00 UTC (05:00 בחורף, 06:00 בקיץ). render: כשמשימת Claude דוחפת את השורה המיוחדת ל-claude/line-<תאריך>
+# prepare: א'–ו' ב-02:17 UTC (04:17 בחורף, 05:17 בקיץ; דקה לא עגולה כי GitHub מאחר/מדלג בשעות עגולות). המשימה של Claude מפעילה ידנית אם לא רץ. render: כשמשימת Claude דוחפת את השורה המיוחדת ל-claude/line-<תאריך>
 on:
   schedule:
-    - cron: '0 3 * * 0-5'
+    - cron: '17 2 * * 0-5'
   workflow_dispatch:
   push:
     branches: ['claude/line-*']
