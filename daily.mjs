@@ -31,7 +31,7 @@ if (step === 'prepare') {
     process.exit(1);
   }
   // רכב אחד ביום: אם כבר תוזמן היום פוסט רכב (שורה "תוכנן" ביומן עם התאריך של היום), לא בונים עוד אחד
-  const already = fs.readFileSync(LOG, 'utf8').split(/\r?\n/).map((l) => l.split(',')).find((r) => r[0] === today && (r[5] || '').trim() === 'תוכנן');
+  const already = fs.readFileSync(LOG, 'utf8').split(/\r?\n/).map((l) => l.split(',')).find((r) => r[0] === today && ['תוכנן', 'פורסם'].includes((r[5] || '').trim()) || (r[5] || '').startsWith('חלקי'));
   if (already) {
     fs.writeFileSync('today.json', JSON.stringify({ date: today, error: `כבר תוזמן היום פוסט רכב (${already[3]}), לא נבנה עוד אחד` }, null, 1));
     commit(`today: ${today} (כבר תוזמן)`, ['today.json']);
@@ -78,4 +78,18 @@ else if (step === 'render') {
   } catch {}
   if (plan.error) { console.log('::error::' + plan.error); process.exit(1); }
 }
-else { console.error('usage: node daily.mjs prepare|render'); process.exit(2); }
+else if (step === 'status') {
+  // status.json מהמשימה בענן: {date, plate, results: {instagram: "ok", tiktok: "<שגיאה>", ...}}
+  // הכול ok: "פורסם". חלק נכשל: "חלקי: <רשתות>". הכול נכשל: "נכשל", והרכב חוזר לתור (car_text.cjs, NOT_POSTED)
+  const ref = process.env.LINE_REF;
+  const s = JSON.parse(out('git', ['show', `origin/${ref}:status.json`]));
+  const res = Object.entries(s.results || {}); const bad = res.filter(([, v]) => v !== 'ok').map(([k]) => k);
+  const status = !res.length || bad.length === res.length ? 'נכשל' : bad.length ? `חלקי: ${bad.join(' ')}` : 'פורסם';
+  const lines = fs.readFileSync(LOG, 'utf8').split(/\r?\n/);
+  let hit = false;
+  const next = lines.map((l) => { const r = l.split(','); if (r[0] === s.date && r[2] === String(s.plate)) { hit = true; r[5] = status; return r.join(','); } return l; });
+  if (hit) { fs.writeFileSync(LOG, next.join('\n')); commit(`status: ${s.date} ${s.plate} ${status}`, [LOG]); }
+  else console.log(`::warning::אין שורה ביומן ל-${s.date} ${s.plate}`);
+  try { run('git', ['push', '-q', 'origin', '--delete', ref]); } catch {}
+}
+else { console.error('usage: node daily.mjs prepare|render|status'); process.exit(2); }

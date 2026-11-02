@@ -5,8 +5,13 @@ on:
   schedule:
     - cron: '17 2 * * 0-5'
   workflow_dispatch:
+    inputs:
+      skip:
+        description: 'מספרי רישוי שלא מקדמים (חדר הבקרה), מופרדים בפסיק'
+        required: false
+        default: ''
   push:
-    branches: ['claude/line-*']
+    branches: ['claude/line-*', 'claude/status-*']
 permissions:
   contents: write
 concurrency:
@@ -28,9 +33,29 @@ jobs:
         env:
           AUTO360_EMAIL: ${{ secrets.AUTO360_EMAIL }}
           AUTO360_CODE: ${{ secrets.AUTO360_CODE }}
+          SKIP_PLATES: ${{ inputs.skip }}
         run: node daily.mjs prepare
+  status:
+    # המשימה בענן דוחפת claude/status-<תאריך> עם התוצאה האמיתית של התזמון ב-Metricool, והיומן מתעדכן (3.11.2026)
+    if: github.event_name == 'push' && startsWith(github.ref_name, 'claude/status-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Status
+        env:
+          LINE_REF: ${{ github.ref_name }}
+        run: |
+          git fetch -q origin "$LINE_REF"
+          node daily.mjs status
   render:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && startsWith(github.ref_name, 'claude/line-')
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:

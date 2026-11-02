@@ -496,13 +496,15 @@ function posted() {
 }
 // החדש ביותר במלאי (לפי תאריך הכניסה לאתר) שעוד לא פורסם ועובר את הסינון.
 // רכב שלא במלאי auto360 נחשב נמכר (כללים.md 1.4). auto360 לא זמין: סומכים על האתר בלבד
+// SKIP_PLATES: רכבים שסומנו "לא לקדם" בחדר הבקרה (המשימה בענן מפעילה את prepare מחדש עם הרשימה, 3.11.2026)
+const skipPlates = () => new Set(String(process.env.SKIP_PLATES || '').split(/[\s,]+/).map((p) => p.replace(/\D/g, '')).filter(Boolean));
 function pickToday(CJ, n = 1) {
-  const done = posted(), skipped = [], picked = [];
+  const done = posted(), skipped = [], picked = [], skip = skipPlates();
   const api = Array.isArray(CJ.apiPlates) ? new Set(CJ.apiPlates) : null;
   const cars = [...CJ.cars].sort((a, b) => (b.effDateMs || b.dateMs || 0) - (a.effDateMs || a.dateMs || 0));
   for (const c of cars) {
     if (done.has(c.plate)) continue;
-    const why = api && !api.has(c.plate) ? 'לא במלאי auto360' : whyNot(c);
+    const why = skip.has(String(c.plate).replace(/\D/g, '')) ? 'לא לקדם (חדר הבקרה)' : api && !api.has(c.plate) ? 'לא במלאי auto360' : whyNot(c);
     if (why) { if (!picked.length) skipped.push(`${c.title} (${c.plate}): ${why}`); continue; }
     picked.push(c);
     if (picked.length === n) break;

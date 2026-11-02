@@ -9,10 +9,14 @@
 
 **אסור, בלי יוצא מן הכלל:**
 - לשנות או למחוק פוסט ב-Metricool שלא נוצר מהתוכנית של היום.
-- לדחוף ל-main, או לשנות במאגר קובץ שאינו line.json.
+- לדחוף ל-main, או לשנות במאגר קובץ שאינו line.json (בענף claude/line-*) או status.json (בענף claude/status-*).
 - להקליד מחדש, לקצר או לשנות את התוכן של קובצי info: מעבירים אותם כמו שהם.
 
 ב-Metricool: blogId = 4413696, timezone = Asia/Jerusalem.
+
+**חדר הבקרה** (המקום שבו אליחי מנהל הכול, החלטה #121) הוא גיליון Google: spreadsheet_id `12YN3A7bjO4pjGoqGJ4yAkEvcJqGVh3CEbn-AYPdmOus`. הגישה דרך מחבר Composio, עם הכלי COMPOSIO_MULTI_EXECUTE_TOOL ו-sync_response_to_workbench=false:
+- קריאה: GOOGLESHEETS_VALUES_GET עם spreadsheet_id ו-range.
+- הוספת שורה: GOOGLESHEETS_SPREADSHEETS_VALUES_APPEND עם spreadsheetId, range `engines!A:H`, valueInputOption RAW ו-insertDataOption INSERT_ROWS.
 
 כל הסיכומים וההודעות בעברית בלבד.
 
@@ -21,12 +25,23 @@
 ## 0. התחלה
 1. בתיקיית המאגר bcars-organic: `git checkout -q main && git pull -q`.
 2. `node schedule.mjs mode` מדפיס `<MODE> <תאריך היום> <היסט>`, למשל `SCHEDULE 2026-11-01 +02:00`.
-3. אם MODE הוא CHECK, דלג לסעיף 5.
+3. **הגדרות מחדר הבקרה:** קרא את `controls!A1:D200` (עמודות key, value).
+   - אם `engine.organic` הוא `off`:
+     - ב-SCHEDULE: הוסף ל-engines את השורה `[עכשיו ISO, "organic", "ok", "מושהה מחדר הבקרה, לא פורסם היום", "0", "0", "", ""]`, ועצור בלי הודעה.
+     - ב-CHECK: סיים בלי כלום.
+   - אם הגיליון לא נגיש: המשך כרגיל, והוסף לדוח שורה "לשיפור: חדר הבקרה לא נגיש".
+4. **רשימת "לא לקדם":** קרא את `requests!A1:J1000`. כל שורה ש-type שלה `no_promote` ו-status שלה `done` היא רכב שלא מקדמים. מספר הרישוי שלה נמצא בעמודה text, אחרי `|` או כספרות. שמור את רשימת המספרים, ספרות בלבד.
+5. אם MODE הוא CHECK, דלג לסעיף 5.
 
 ## 1. הרכב של היום
 1. `node -e "const t=require('./today.json');console.log(t.date, t.error||'', t.car?t.car.plate+' '+t.car.title:'NOCAR')"`.
 2. התאריך שונה מהיום: קודם בדוק ב-GitHub Actions (actions_list, list_workflow_runs, workflow organic.yml) אם יש היום ריצה של prepare (event schedule או workflow_dispatch) שרצה או בתור. אם אין, הפעל אותה בעצמך: actions_run_trigger עם method run_workflow, workflow_id organic.yml, ref main. זו הפעולה היחידה ב-GitHub Actions שמותר לך לעשות. אחר כך חכה. בכל פעם `sleep 300`, אחר כך `git pull -q` ובדוק שוב, עד 45 דקות בסך הכול. עדיין לא: PushNotification "פוסט הרכב היומי: הרכב של היום לא נבחר (גם אחרי הפעלה ידנית של GitHub Actions)", ועצור.
-3. יש error: PushNotification "פוסט הרכב היומי: " ואחריו השגיאה, ועצור.
+3. יש error: PushNotification "פוסט הרכב היומי: " ואחריו השגיאה, הוסף ל-engines שורה עם status `fail` ואותה שגיאה, ועצור.
+3א. **הרכב של היום ברשימת "לא לקדם"** (סעיף 0.4, ההשוואה בספרות בלבד):
+   - הפעל את prepare מחדש: actions_run_trigger עם method run_workflow, workflow_id organic.yml, ref main ו-inputs `{"skip":"<כל המספרים מהרשימה, מופרדים בפסיק>"}`.
+   - חכה כמו בסעיף 1.2, עד ש-today.json מתעדכן לרכב אחר.
+   - בדוח: "<רכב> ברשימת לא לקדם, נבחר במקומו <רכב>".
+   - **אם אחרי 45 דקות הרכב לא התחלף:** PushNotification "פוסט הרכב היומי: הרכב של היום ברשימת לא לקדם ולא נבחר אחר", הוסף ל-engines שורה עם status `partial`, ועצור.
 4. NOCAR: `node schedule.mjs report`, ואז PushNotification עם הטקסט שהוא הדפיס, בדיוק, ועצור.
 5. אם ב-origin/main כבר יש plan.json מהיום עם car.video (ריצה חוזרת), דלג לסעיף 3. הבדיקה: `git show origin/main:plan.json`.
 
@@ -83,7 +98,22 @@
    - date = התוכן של `date-<פוסט>.txt`.
    - info = התוכן של `info-<פוסט>.json`, תו בתו.
 5. אחרי כל קריאה, עדכן את results.json בצורה `{"instagram":"ok","instagram-story":"ok", ...}`. המפתח הוא שם הפוסט מהקובץ. בשגיאה כותבים את ההודעה עצמה במקום "ok". לא מנסים שוב קריאה שנכשלה.
-6. `node schedule.mjs report`, ואז PushNotification עם הטקסט שהוא הדפיס, בדיוק. סיום.
+6. `node schedule.mjs report`, ואז PushNotification עם הטקסט שהוא הדפיס, בדיוק.
+7. **התוצאה האמיתית ליומן:**
+   - כתוב `status.json` במבנה `{"date":"<היום>","plate":"<car.plate>","results":<התוכן של results.json>}`.
+   - דחוף אותו כך:
+     ```
+     git checkout -q -b claude/status-<היום>
+     git add -f status.json
+     git commit -q -m "status: <היום> <plate>"
+     git push -q -u origin claude/status-<היום>
+     git checkout -q main
+     ```
+   - מה קורה אחר כך: GitHub Actions כותב ביומן "פורסם", "חלקי" או "נכשל". אם הכול נכשל, הרכב חוזר לתור.
+   - הדחיפה נכשלה: נסה שוב פעם אחת, ואם לא, הוסף לדוח "לשיפור: הסטטוס לא נשלח ליומן".
+8. **שורת דופק לחדר הבקרה** (engines):
+   - העמודות: `[עכשיו ISO עם ההיסט, "organic", <ok|partial|fail>, "<רכב>: <כמה פוסטים תוזמנו> מתוך <כמה>", "1", "0", "<רשתות שנכשלו, או ריק>", "מחר 06:00"]`.
+   - status: `ok` אם הכול ok, `partial` אם חלק נכשלו, `fail` אם הכול נכשל. סיום.
 
 ## 5. בדיקת צהריים (MODE=CHECK)
 1. `git pull -q`.
@@ -94,3 +124,6 @@
    2. `node schedule.mjs sold scheduled.json` כותב קבצי `upd-<n>.json`.
    3. לכל קובץ כזה: updateScheduledPost עם blogId "4413696", ועם id ו-uuid מהקובץ. info = ה-JSON של השדה info בקובץ, כמחרוזת.
    4. PushNotification "פוסט הרכב היומי: <car.name> נמכר. <n> פוסטים שלו שעוד לא עלו הוחזרו לטיוטה ב-Metricool".
+   5. הוסף ל-engines שורה `[עכשיו, "organic", "ok", "<car.name> נמכר: <n> פוסטים הוחזרו לטיוטה", "0", "<n>", "", ""]`.
+
+בדיקת הצהריים רצה ב-13:00, 16:00 ו-19:00, כדי לתפוס גם רכב שנמכר אחר הצהריים לפני שהטיקטוק והיוטיוב שלו עולים.
