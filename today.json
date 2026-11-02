@@ -1,4 +1,65 @@
 {
- "date": "2026-11-01",
- "error": "כבר תוזמן היום פוסט רכב (סיאט איביזה 2018), לא נבנה עוד אחד"
+ "date": "2026-11-02",
+ "at": "2026-11-02T05:34:59.507Z",
+ "skipped": [
+  "אאודי Q3 2013 (4898212): פחות מ-10 תמונות",
+  "סיאט איביזה 2011 (6638873): פחות מ-10 תמונות",
+  "מזדה 3 2010 (2996071): פחות מ-10 תמונות",
+  "אופל אסטרה BERLINA 2016 (3079739): יד 5",
+  "סקודה ראפיד 2018 (37341201): יד 3",
+  "שברולט מאליבו 2015 (9151332): יד 3",
+  "שברולט סילברדו 2022 (51844602): יד 3",
+  "סיאט ארונה 2019 (83628901): יד 4",
+  "שברולט סילברדו 2021 (51509702): 311,000 ק\"מ"
+ ],
+ "auto360": "ok",
+ "next": "סיאט קופרה 2023",
+ "car": {
+  "title": "יונדאי I20 2021",
+  "trim": "Intense",
+  "plate": "36017302",
+  "km": 153000,
+  "hand": "1",
+  "origin": "ליסינג",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 1000,
+  "hp": 100,
+  "seats": 5,
+  "test": "27/02/2027",
+  "price": 70480,
+  "noPhotos": false,
+  "wpId": 23472,
+  "link": "https://www.bcars.co.il/car/%d7%99%d7%95%d7%a0%d7%93%d7%90%d7%99-i20-2021-5293/",
+  "syncId": 5293,
+  "commercial": false,
+  "dateMs": 1791810441000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/10-26/Up481F7xrR.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/FRElLtRzYx.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/7UkwVBLVPh.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/ix8yeYMdtW.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/D9I48T2vKX.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/mKgNRC2I5m.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/f1jvB3u9PZ.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/pqtoyGYnre.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/yg0oiWUBmq.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/dSAqny5IIY.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/10-26/t4J0O0fm3x.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/qBNx7JOr2t.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/4R0FbAashu.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/pbkrSkMi61.jpg",
+   "https://cm.auto360.co.il/uploads/10-26/R7xfV4iuiN.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1791810441000,
+  "ageDays": 20,
+  "below": true,
+  "body": "HATCHBACK",
+  "oldStar": "הצ'בק של יונדאי, לנסיעה יומיומית."
+ }
 }
