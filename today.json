@@ -1,4 +1,54 @@
 {
- "date": "2026-11-08",
- "error": "כבר תוזמן היום פוסט רכב (פיאט טיפו 2017), לא נבנה עוד אחד"
+ "date": "2026-11-09",
+ "at": "2026-11-09T04:09:39.631Z",
+ "skipped": [],
+ "auto360": "ok",
+ "next": "מזדה CX-5 2016",
+ "car": {
+  "title": "סיאט איביזה 2016",
+  "trim": "STYLE CP",
+  "plate": "5441938",
+  "km": 232000,
+  "hand": "01",
+  "origin": "פרטית",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 1000,
+  "hp": 110,
+  "seats": 5,
+  "test": "14/11/2027",
+  "price": 32000,
+  "noPhotos": false,
+  "wpId": 24196,
+  "link": "https://www.bcars.co.il/car/%d7%a1%d7%99%d7%90%d7%98-%d7%90%d7%99%d7%91%d7%99%d7%96%d7%94-2016-5358/",
+  "syncId": 5358,
+  "commercial": false,
+  "dateMs": 1793778592000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/11-26/uj0Hvx9Wqb.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/B0D20p3URM.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/AJrp6tQRq8.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/F3T0wKHoYS.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/JcxL7dBVUJ.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/5aGt8gL9Ap.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/O6UbAbJV6c.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/CMeuzyX30N.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/kIgpiRpFRM.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/efflyOhJ0L.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/11-26/dRZt8TRL2z.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/gXJHbC2Xe7.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/1R5CnKr59J.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/Uy0pxEvjq3.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1793778592000,
+  "ageDays": 4,
+  "below": true,
+  "body": "HATCHBACK",
+  "oldStar": ""
+ }
 }
