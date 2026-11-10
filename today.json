@@ -1,4 +1,58 @@
 {
- "date": "2026-11-09",
- "error": "כבר תוזמן היום פוסט רכב (סיאט איביזה 2016), לא נבנה עוד אחד"
+ "date": "2026-11-10",
+ "at": "2026-11-10T04:09:55.972Z",
+ "skipped": [
+  "יונדאי טוסון 2016 (6751539): יד 5",
+  "סובארו XV 2015 (1625730): פחות מ-10 תמונות"
+ ],
+ "auto360": "ok",
+ "next": "טויוטה אייגו X 2022",
+ "car": {
+  "title": "מזדה CX-5 2016",
+  "trim": "Executive",
+  "plate": "2096630",
+  "km": 220000,
+  "hand": "01",
+  "origin": "פרטית",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 2000,
+  "hp": 165,
+  "seats": 5,
+  "test": "27/07/2027",
+  "price": 53000,
+  "noPhotos": false,
+  "wpId": 24122,
+  "link": "https://www.bcars.co.il/car/%d7%9e%d7%96%d7%93%d7%94-cx-5-2016-5349/",
+  "syncId": 5349,
+  "commercial": false,
+  "dateMs": 1793620383000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/11-26/QzxrWUuouo.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/zQ919n4Wt7.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/TNAJqSAiGi.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/H54BSXOyHL.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/phPWyCZZ2z.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/ZL3iUTOkrB.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/2XLEDTmz3o.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/qhhJkHKEIv.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/nVkeTNv8WS.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/tLr5lTwEph.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/11-26/WFgkDtNSCb.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/jqML3FeNpm.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/BJajOnPliF.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/QWe62o06uf.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/uRwgK3hmIj.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1793620383000,
+  "ageDays": 7,
+  "below": true,
+  "body": "SUV",
+  "oldStar": ""
+ }
 }
