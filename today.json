@@ -1,4 +1,55 @@
 {
- "date": "2026-11-12",
- "error": "כבר תוזמן היום פוסט רכב (טויוטה אייגו X 2022), לא נבנה עוד אחד"
+ "date": "2026-11-13",
+ "at": "2026-11-13T04:10:27.780Z",
+ "skipped": [],
+ "auto360": "ok",
+ "next": "שברולט ספארק 2019",
+ "car": {
+  "title": "שברולט אקווינוקס 2017",
+  "trim": "LS",
+  "plate": "3971139",
+  "km": 170000,
+  "hand": "01",
+  "origin": "ליסינג",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 2400,
+  "hp": 182,
+  "seats": 5,
+  "test": "04/01/2027",
+  "price": 37500,
+  "noPhotos": false,
+  "wpId": 24392,
+  "link": "https://www.bcars.co.il/car/%d7%a9%d7%91%d7%a8%d7%95%d7%9c%d7%98-%d7%90%d7%a7%d7%95%d7%95%d7%99%d7%a0%d7%95%d7%a7%d7%a1-2017-5378/",
+  "syncId": 5378,
+  "commercial": false,
+  "dateMs": 1794375243000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/11-26/WoJteaAWZo.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/KbU4J2qedC.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/4cZBUkRZVN.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/2sQ5Bztweh.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/KrebwspiZ8.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/dt3cgqceVv.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/blTeu5HBIO.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/DAWQ0mUSzU.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/7IRTPPdpAH.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/LtQr11qBY1.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/11-26/aup1RiBAIO.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/dAtzz3HmI5.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/RwLxw0vMhl.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/HCicEmq11a.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/jggvguEMn1.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1794375243000,
+  "ageDays": 1,
+  "below": false,
+  "body": "SUV",
+  "oldStar": ""
+ }
 }
