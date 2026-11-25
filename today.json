@@ -1,4 +1,58 @@
 {
- "date": "2026-11-24",
- "error": "כבר תוזמן היום פוסט רכב (מיצובישי ספייס סטאר 2021), לא נבנה עוד אחד"
+ "date": "2026-11-25",
+ "at": "2026-11-25T04:09:33.176Z",
+ "skipped": [
+  "שברולט טראוורס 2017 (4028639): פחות מ-10 תמונות",
+  "רנו מגאן 2023 (32247403): פחות מ-10 תמונות",
+  "צ'רי טיגו 7 פרו 2024 (11389704): פחות מ-10 תמונות"
+ ],
+ "auto360": "ok",
+ "next": "פיג'ו 3008 2023",
+ "car": {
+  "title": "סקודה אוקטביה 2023",
+  "trim": "Ambition",
+  "plate": "60556503",
+  "km": 111000,
+  "hand": "1",
+  "origin": "חברה",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 1000,
+  "hp": 110,
+  "seats": 5,
+  "test": "13/11/2027",
+  "price": 100000,
+  "noPhotos": false,
+  "wpId": 24756,
+  "link": "https://www.bcars.co.il/car/%d7%a1%d7%a7%d7%95%d7%93%d7%94-%d7%90%d7%95%d7%a7%d7%98%d7%91%d7%99%d7%94-2023-5408/",
+  "syncId": 5408,
+  "commercial": false,
+  "dateMs": 1795502665000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/11-26/06lNF8CC2I.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/rC60dMc5my.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/xgujxGDQPo.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/wo7tsNWmP4.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/UJH43f5QVt.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/fT8nCuZfjM.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/jEPfjSrx1r.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/K9Ad9XOpL2.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/W0G0fjBZXH.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/uAYfz2oVHw.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/11-26/B4KELunHdN.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/UdiNDzTJ62.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/IBPVYRAzbi.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/6BBDFqSgLp.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1795502665000,
+  "ageDays": 0,
+  "below": true,
+  "body": "SEDAN",
+  "oldStar": ""
+ }
 }
