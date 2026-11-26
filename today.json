@@ -1,4 +1,59 @@
 {
- "date": "2026-11-25",
- "error": "כבר תוזמן היום פוסט רכב (סקודה אוקטביה 2023), לא נבנה עוד אחד"
+ "date": "2026-11-26",
+ "at": "2026-11-26T04:09:54.820Z",
+ "skipped": [
+  "פיאט 500X 2017 (26371601): פחות מ-10 תמונות",
+  "שברולט ספארק 2014 (2448232): פחות מ-10 תמונות",
+  "שברולט טראוורס 2017 (4028639): פחות מ-10 תמונות"
+ ],
+ "auto360": "ok",
+ "next": "צ'רי טיגו 7 פרו 2024",
+ "car": {
+  "title": "רנו מגאן 2023",
+  "trim": "ZEN",
+  "plate": "32247403",
+  "km": 67000,
+  "hand": "01",
+  "origin": "ליסינג",
+  "gear": "אוטומטי",
+  "fuel": "דיזל",
+  "cc": 1500,
+  "hp": 116,
+  "seats": 5,
+  "test": "23/01/2027",
+  "price": 98000,
+  "noPhotos": false,
+  "wpId": 24767,
+  "link": "https://www.bcars.co.il/car/%d7%a8%d7%a0%d7%95-%d7%9e%d7%92%d7%90%d7%9f-2023-5411/",
+  "syncId": 5411,
+  "commercial": false,
+  "dateMs": 1795506866000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/11-26/jLwBUpxpil.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/1JAZlty645.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/3F5vySabkZ.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/ZvTxUwOMwK.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/wTVHPKYL0z.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/njoK388SgZ.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/WtYtGWiNd3.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/cVFGfF6Bf0.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/IebAU6Z8wQ.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/xFHsEmHPZC.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/11-26/0hu8oHbc68.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/8Pqm23cGaH.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/QbZjNZj9Xs.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/vBhZH7IVfN.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/EhULUbqdaf.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1795506866000,
+  "ageDays": 1,
+  "below": true,
+  "body": "SEDAN",
+  "oldStar": ""
+ }
 }
