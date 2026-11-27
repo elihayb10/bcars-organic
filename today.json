@@ -1,4 +1,60 @@
 {
- "date": "2026-11-26",
- "error": "כבר תוזמן היום פוסט רכב (רנו מגאן 2023), לא נבנה עוד אחד"
+ "date": "2026-11-27",
+ "at": "2026-11-27T04:09:28.351Z",
+ "skipped": [
+  "סיאט איביזה 2017 (4151780): פחות מ-10 תמונות",
+  "פיאט 500X 2017 (26371601): פחות מ-10 תמונות",
+  "שברולט ספארק 2014 (2448232): פחות מ-10 תמונות",
+  "שברולט טראוורס 2017 (4028639): פחות מ-10 תמונות"
+ ],
+ "auto360": "ok",
+ "next": "סקודה ראפיד 2018",
+ "car": {
+  "title": "צ'רי טיגו 7 פרו 2024",
+  "trim": "NOBLE",
+  "plate": "11389704",
+  "km": 23000,
+  "hand": "1",
+  "origin": "פרטית",
+  "gear": "אוטומטי",
+  "fuel": "בנזין",
+  "cc": 1600,
+  "hp": 186,
+  "seats": 5,
+  "test": "19/10/2027",
+  "price": 140400,
+  "noPhotos": false,
+  "wpId": 24761,
+  "link": "https://www.bcars.co.il/car/%d7%a6%d7%a8%d7%99-%d7%98%d7%99%d7%92%d7%95-7-%d7%a4%d7%a8%d7%95-2024-5409/",
+  "syncId": 5409,
+  "commercial": false,
+  "dateMs": 1795505278000,
+  "images": [
+   "https://cm.auto360.co.il/uploads/11-26/pIl6NIBdMr.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/HdVDVeAUFK.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/m7BdnZia4x.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/PKvMlfkvKH.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/VehIbHG15N.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/PA6KeNypXM.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/Rbru12nBri.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/CT2VqwXFkm.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/KKyhRwpspm.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/NH24iY39xs.jpg"
+  ],
+  "extra": [
+   "https://cm.auto360.co.il/uploads/11-26/3Bucu7Eaeo.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/jcsZjOMR9j.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/oG8IewSxvn.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/7huCLDbY9d.jpg",
+   "https://cm.auto360.co.il/uploads/11-26/EfsOKIPmNk.jpg"
+  ],
+  "imgSource": "feed",
+  "inFeed": true,
+  "ageFixed": false,
+  "effDateMs": 1795505278000,
+  "ageDays": 2,
+  "below": true,
+  "body": "SUV",
+  "oldStar": ""
+ }
 }
